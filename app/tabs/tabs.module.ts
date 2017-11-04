@@ -20,7 +20,7 @@ import { TabsComponent } from "./tabs.component";
         HomeComponent,
         BrowseComponent,
         SearchComponent,
-        AuthService
+        // AuthService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
