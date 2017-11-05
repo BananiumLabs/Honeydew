@@ -40,3 +40,19 @@
     
     </div>
 </div>
+<div class="row center">
+    <nb-card>
+        <nb-card-header>Your Current Assignment</nb-card-header>
+        <nb-card-body>
+            <h2>{{(demoFinished) ? 'Calculus FG - Est: 91 minutes' : 'AP BIO - Est: 43 minutes'}}</h2>
+        </nb-card-body>
+    </nb-card>
+</div>
+<div class="row center" *ngIf="!demoFinished">
+    <nb-card>
+        <nb-card-header>Your Remaining Assignment(s):</nb-card-header>
+        <nb-card-body>
+            <h2>Calculus FG - Est: 91 minutes</h2>
+        </nb-card-body>
+    </nb-card>
+</div>

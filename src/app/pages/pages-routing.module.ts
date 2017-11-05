@@ -12,6 +12,8 @@ import { EchartsRadarComponent } from './charts/echarts/echarts-radar.component'
 import { EchartsPieComponent } from './charts/echarts/echarts-pie.component';
 import { AngularEchartsModule } from 'ngx-echarts';
 
+import { ModalComponent } from './ui-features/modals/modal/modal.component';
+
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
@@ -73,7 +75,11 @@ const routes: Routes = [{
     ScheduleComponent,
     ReportsComponent,
     EchartsRadarComponent,
-    EchartsPieComponent
+    EchartsPieComponent,
+    ModalComponent
+  ],
+  entryComponents: [
+    ModalComponent
   ]
 })
 export class PagesRoutingModule {

@@ -25,9 +25,12 @@ export class TimerComponent implements OnInit, OnDestroy {
   timerSubscription: any;
   disableTimer: number;
 
+  demoFinished: boolean;
+
   constructor(private authService: AuthService, private router: Router) {
     console.log("Displaying timer");
     this.disableTimer = -1;
+    this.demoFinished = false;
     this.date = new Date(null);
     this.userInfo = authService.userInfo;
     this.userInfo
@@ -83,11 +86,13 @@ export class TimerComponent implements OnInit, OnDestroy {
   dhms(t) {
     if (this.disableTimer == 1) {
       console.log("Disposing Subscription");
+      this.demoFinished = true;
       this.timerSubscription.unsubscribe();
       return "Timer Completed!";
     }
     else if (this.disableTimer == 2) {
       console.log("Disposing Subscription");
+      this.demoFinished = true;
       this.timerSubscription.unsubscribe();
       return "Timer Cancelled!";
     }
