@@ -1,22 +1,22 @@
 import {Component} from "@angular/core";
-// import {AuthService} from "app/shared/auth.service";
+import {AuthService} from "../shared/auth.service";
 import { Observable, BehaviorSubject } from "rxjs";
 import {Router} from "@angular/router";
 
 @Component({
-    selector: 'welcome',
-    templateUrl: 'welcome.component.html',
+    selector: 'one',
+    templateUrl: 'one.component.html',
     styleUrls: ['welcome.scss']
 })
-export class WelcomeComponent {
+export class OneComponent {
     
     constructor(private router: Router) {
-
+        
     }
 
     next() {
         // console.log(this.router.navigate(['one']));
-        window.location.href = '/#/pages/welcome/one';
+        window.location.href = '/#/pages/welcome/two';
         console.log('click');
     }
 }

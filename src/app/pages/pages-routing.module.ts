@@ -7,6 +7,10 @@ import { TimerComponent } from './timer.component';
 import { ReportsComponent } from './reports.component';
 import { ScheduleComponent } from './schedule.component';
 
+import { ThemeModule } from '../@theme/theme.module';
+import { EchartsRadarComponent } from './charts/echarts/echarts-radar.component';
+import { AngularEchartsModule } from 'ngx-echarts';
+
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
@@ -59,12 +63,15 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),
+    ThemeModule,
+  AngularEchartsModule],
   exports: [RouterModule],
   declarations: [
     TimerComponent,
     ScheduleComponent,
-    ReportsComponent
+    ReportsComponent,
+    EchartsRadarComponent
   ]
 })
 export class PagesRoutingModule {

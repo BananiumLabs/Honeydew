@@ -238,69 +238,14 @@ export class dbconnect {
   }
 
   //read custom value from database
-  getCustom(uid: string, name: string, callback) {
+  getCustom(uid: string, callback) {
       if(uid != undefined) {
-      var db = firebase.database().ref('users').child(uid).child(name);
+      var db = firebase.database().ref('users').child(uid);
       db.on('value', function(rtrn) {
           //if(rtrn.val() != undefined && rtrn.val() != null )
             callback(rtrn.val());
       });
     }
   }
-
-  checkExist(uid: string, value: string, callback) {
-    var db = firebase.database().ref('users').child(uid);
-    db.once('value', function(snapshot) {
-      if (snapshot.hasChild(value))
-        callback(true);
-
-      else
-        callback(false);
-    });
-  }
-
-	//Returns if the redeemStatus variable is equal to 1
-  getRedeemStatus(uid: string): boolean {
-
-	  var rtrn = false;
-	  firebase.database().ref('users').child(uid).on('value', function(points) {
-		  rtrn = (points.val().redeemStatus === undefined) ? false : points.val().redeemStatus === 1;
-	  });
-
-	  return rtrn;
-  }
-
-	//Remove points when user redeems
-  deductPoints(uid: string, amount: number, type: string){
-    var db = firebase.database().ref('users').child(uid);
-		var currPoints : number;
-		var beforeDate : string;
-		var d = new Date();
-		var valid = true;
-    //console.log(uid);
-		db.on('value', function(points) {
-			 currPoints = points.val().points;
-			 beforeDate = (points.val().time === undefined) ? "---" : points.val().time;
-
-			 valid = points.val().points - amount >= 0;
-		});
-
-		//If a user tries to redeem with insufficient points
-		if(valid) {
-        db.update({
-			  "points": currPoints-amount,
-			  "redemption": amount,
-			  "previous-time": beforeDate,
-			  "time": d.getUTCFullYear().toString().concat("/" , d.getUTCMonth().toString() , "/" , d.getUTCDate().toString() , " " , d.getUTCHours().toString() , ":" , d.getUTCMinutes().toString()),
-			  "redeemStatus": 1,
-			  "type": type
-
-		  });
-	  } else {
-		  db.update({
-			  "isSuspicious": true,
-			  "reason": "negative points"
-		  });
-	  }
-  }
 }
+ 

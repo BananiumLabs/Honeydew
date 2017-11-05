@@ -4,9 +4,16 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { WelcomeComponent } from './welcome.component';
 
+import { OneComponent } from './one.component';
+import { TwoComponent } from './two.component';
+import { ThreeComponent } from './three.component';
+
 @NgModule({
     declarations: [
-        WelcomeComponent
+        WelcomeComponent,
+        OneComponent,
+        TwoComponent,
+        ThreeComponent
     ],
     imports: [
         CommonModule,
@@ -15,7 +22,9 @@ import { WelcomeComponent } from './welcome.component';
 
         RouterModule.forChild([
             { path: '', component: WelcomeComponent},
-            // { path: '1', component: OneComponent}, 
+            { path: 'one', component: OneComponent},
+            { path: 'two', component: TwoComponent},
+            { path: 'three', component: ThreeComponent}, 
         ]),
     ],
     exports: [

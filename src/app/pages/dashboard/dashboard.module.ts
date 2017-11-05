@@ -45,7 +45,7 @@ import { EchartsRadarComponent } from '../charts/echarts/echarts-radar.component
     SolarComponent,
     TrafficComponent,
     TrafficChartComponent,
-    EchartsRadarComponent
+    
   ],
 })
 export class DashboardModule { }

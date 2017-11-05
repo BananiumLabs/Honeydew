@@ -3,6 +3,7 @@ import { AuthService } from '../shared/auth.service';
 import { UserInfo } from '../shared/user-info';
 import { Observable, BehaviorSubject } from 'rxjs';
 import {Router} from '@angular/router';
+import { EchartsRadarComponent } from './charts/echarts/echarts-radar.component';
 
 @Component({
   selector: 'ngx-reports',

@@ -99,33 +99,16 @@ export class AuthService {
       return this.database;
     }
 
-    getCustom(item: string): any {
+    getCustom(): any {
         var val;
         if(this.currentUser() !== undefined && this.isLoggedInBool() !== undefined) {
-            this.getDB().getCustom(this.getUID(), item, function(returnValue) {
+            this.getDB().getCustom(this.getUID(), function(returnValue) {
                 val = returnValue;
             });
         }
         return val;
     }
 
-    getAsyncCustom(item: string, callback) {
-        var val;
-        if(this.currentUser() !== undefined && this.isLoggedInBool() !== undefined) {
-            this.getDB().getCustom(this.getUID(), item, function(returnValue) {
-                val = returnValue;
-                callback(val);
-            });
-        }
-    }
-
-    getAsyncCustomUID(uid: string, item: string, callback) {
-        if(this.currentUser() !== undefined && this.isLoggedInBool() !== undefined) {
-            this.getDB().getCustom(uid, item, function(returnValue) {
-                callback(returnValue);
-            });
-        }
-    }
 
 
 /////////////////////////////Setters/////////////////////////////////////
@@ -182,15 +165,6 @@ export class AuthService {
 
     saveCustom(item: string, input: any) {
         this.getDB().saveCustom(this.getUID(), item, input);
-    }
-    saveCustomUID(uid: string, item: string, input: any) {
-        this.getDB().saveCustom(uid, item, input);
-    }
-
-    checkData(uid: string, value: string, callback) {
-        this.getDB().checkExist(uid, value, function(returnValue) {
- 				 callback(returnValue);
- 			 });
     }
 
 ///////////////////////////Oauth Functions////////////////////////////
