@@ -1,60 +1,214 @@
-<div class="row">
-  <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Light" type="primary">
-      <i class="nb-lightbulb"></i>
-    </ngx-status-card>
-  </div>
+<ul *ngIf="currentUser() | async as user">
+          <div style="text-align:center" class="row"> 
 
-  <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Roller Shades" type="success">
-      <i class="nb-roller-shades"></i>
-    </ngx-status-card>
-  </div>
+          <h1>Welcome, {{this.authService.currentUserAsVar().displayName}}!</h1>
 
-  <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Wireless Audio" type="info">
-      <i class="nb-audio"></i>
-    </ngx-status-card>
-  </div>
+          </div>
 
-  <div class="col-xxxl-3 col-md-6">
-    <ngx-status-card title="Coffee Maker" type="warning">
-      <i class="nb-coffee-maker"></i>
-    </ngx-status-card>
-  </div>
-</div>
+          <div class="col-md-6 col-xxl-5">
+            <nb-card>
+              <nb-card-body>
+                <div class="header">
+                  <div>
+                    <h1>You spent: undefined minutes on undefined!</h1>
+                  </div>
+                </div>
+              </nb-card-body>
+            </nb-card>
 
-<div class="row">
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-    <ngx-temperature></ngx-temperature>
-  </div>
 
-  <div class="col-xxxl-9 col-xxl-8 col-lg-7 col-md-6">
-    <ngx-electricity></ngx-electricity>
-  </div>
-</div>
+              <div class="font-row font-main">
+                <div class="header">
+                  <div class="font-w-bold col-md-6">You spent: </div>
+                  <div class="font-w-bold col-md-6">51 Minutes </div>
+                  <div class="font-w-bold">On</div>
+                  <div class="font-w-bold">Physics!</div>
+              
+                  <div class="variants">
+                    <span class="font-w-bold">Bold</span>
+                    <span class="font-w-regular">Regular</span>
+                    <span class="font-w-light">Light</span>
+                  </div>
+                </div>
+                <p>
+                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated
+                  they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                </p>
+              </div>
 
-<div class="row">
-  <div class="col-xxxl-9 col-xl-12">
-    <ngx-rooms></ngx-rooms>
-  </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-lg-7 col-md-6">
-    <ngx-contacts></ngx-contacts>
-  </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-    <ngx-solar [chartValue]="72"></ngx-solar>
 
-    <ngx-kitten></ngx-kitten>
-  </div>
+            </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-md-5">
-    <ngx-traffic></ngx-traffic>
-    <ngx-weather></ngx-weather>
-  </div>
 
-  <div class="col-xxxl-6 col-xxl-12 col-md-7">
-    <ngx-security-cameras></ngx-security-cameras>
-  </div>
-</div>
+          <div class="row">
+            <div class="col-md-6">
+              <nb-card>
+                <nb-card-header>Add New Assignment</nb-card-header>
+                <nb-card-body>
+                  <form>
+                    <div class="form-group row">
+                      <label for="inputAssignment1" class="col-sm-3 col-form-label">Subject</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputAssignment1" placeholder="AP Computer Science">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputDetail2" class="col-sm-3 col-form-label">Detail</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputDetail2" placeholder="Finish HoneyDue.java">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-3">Radios</label>
+                      <div class="col-sm-9">
+                        <div class="form-check">
+                          <label class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="gridRadios" checked>
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Option one is this and that&mdash;be sure to include why it's great</span>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <label class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="gridRadios">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Option two can be something else and selecting it will deselect option one</span>
+                          </label>
+                        </div>
+                        <div class="form-check disabled">
+                          <label class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="gridRadios" disabled>
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Option three is disabled</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="offset-sm-3 col-sm-9">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </div>
+                    </div>
+                  </form>
+                </nb-card-body>
+              </nb-card>
+
+              <!--<nb-card>
+                <nb-card-header>Form without labels</nb-card-header>
+                <nb-card-body>
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Recipients">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control" placeholder="Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Send</button>
+                  </form>
+                </nb-card-body>
+              </nb-card>
+            </div>
+
+            <div class="col-md-6">
+              <nb-card>
+                <nb-card-header>Basic form</nb-card-header>
+                <nb-card-body>
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <nb-checkbox>Check me out</nb-checkbox>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                  </form>
+                </nb-card-body>
+              </nb-card>
+
+              <nb-card>
+                <nb-card-header>Block form</nb-card-header>
+                <nb-card-body>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="inputFirstName">First Name</label>
+                        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="inputLastName">Last Name</label>
+                        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="inputWebsite">Website</label>
+                        <input type="text" class="form-control" id="inputWebsite" placeholder="Website">
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </nb-card-body>
+              </nb-card>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <nb-card>
+                <nb-card-header>Horizontal form</nb-card-header>
+                <nb-card-body>
+                  <form class="form-horizontal">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-3 form-control-label">Email</label>
+                      <div class="col-sm-9">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-3 form-control-label">Password</label>
+                      <div class="col-sm-9">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="offset-sm-3 col-sm-9">
+                        <div class="checkbox">
+                          <nb-checkbox>Remember me</nb-checkbox>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="offset-sm-3 col-sm-9">
+                        <button type="submit" class="btn btn-warning">Sign in</button>
+                      </div>
+                    </div>
+                  </form>
+                </nb-card-body>
+              </nb-card>-->
+            </div>
+          </div>
+
+              <!--<ngx-status-card title="Light" type="primary">
+                <i class="nb-lightbulb"></i>
+              </ngx-status-card>-->
+</ul>

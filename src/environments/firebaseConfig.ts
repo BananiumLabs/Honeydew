@@ -1,8 +1,9 @@
 export const firebaseConfig = {
     // Paste all this from the Firebase console...
-    apiKey: "AIzaSyBjPOhHoGlvgBvgtr6Sfpg9OsIao2Ux8a8",
-    authDomain: "electrotab-project.firebaseapp.com",
-    databaseURL: "https://electrotab-project.firebaseio.com",
-    storageBucket: "electrotab-project.appspot.com",
-    messagingSenderId: "503957073726"
+    apiKey: "AIzaSyAjeIfPsuQGJ_ojy_a_DNlq4YJPZcdAg-A",
+    authDomain: "honeydew-hw-helper.firebaseapp.com",
+    databaseURL: "https://honeydew-hw-helper.firebaseio.com",
+    projectId: "honeydew-hw-helper",
+    storageBucket: "honeydew-hw-helper.appspot.com",
+    messagingSenderId: "87786419738"
 };
