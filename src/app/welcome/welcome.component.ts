@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
 @Component({
     selector: 'welcome',
     templateUrl: 'welcome.component.html',
-    // styleUrls: ['']
+    styleUrls: ['welcome.scss']
 })
 export class WelcomeComponent {
   
