@@ -17,11 +17,17 @@ export class TimerComponent implements OnInit, OnDestroy {
 
   ticks = 0;
   formattedTime: string;
+  validTime: number;
 
   date: Date;
 
+  timer: any;
+  timerSubscription: any;
+  disableTimer: number;
+
   constructor(private authService: AuthService, private router: Router) {
     console.log("Displaying timer");
+    this.disableTimer = -1;
     this.date = new Date(null);
     this.userInfo = authService.userInfo;
     this.userInfo
@@ -32,15 +38,27 @@ export class TimerComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    let timer = Observable.timer(0, 1000);
-    timer.subscribe(t => this.formattedTime = this.dhms(t));
+    this.timer = Observable.timer(0, 1000);
+    this.timerSubscription = this.timer.subscribe(t => this.timeHandler(t));
     
     // this.date.setSeconds(this.ticks); // specify value for SECONDS here
     // this.formattedTime = this.date.toISOString().substr(11, 8);
-    
-
   }
 
+  timeHandler(t) {
+    this.formattedTime = this.dhms(t);
+    if(this.disableTimer == -1)
+      this.validTime = t;
+      console.log(this.validTime);
+  }
+
+  dismissTime() {
+    this.ticks = 0;
+    this.disableTimer = 2;
+  }
+  submitTime() {
+    this.disableTimer = 1;
+  }
   ngOnDestroy(): void {
   }
   
@@ -63,6 +81,16 @@ export class TimerComponent implements OnInit, OnDestroy {
   }
 
   dhms(t) {
+    if (this.disableTimer == 1) {
+      console.log("Disposing Subscription");
+      this.timerSubscription.unsubscribe();
+      return "Timer Completed!";
+    }
+    else if (this.disableTimer == 2) {
+      console.log("Disposing Subscription");
+      this.timerSubscription.unsubscribe();
+      return "Timer Cancelled!";
+    }
     var days, hours, minutes, seconds;
     days = Math.floor(t / 86400);
     t -= days * 86400;
