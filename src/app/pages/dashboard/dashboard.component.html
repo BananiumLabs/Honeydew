@@ -1,44 +1,20 @@
 <ul *ngIf="currentUser() | async as user">
           <div style="text-align:center" class="row"> 
 
-          <h1>Welcome, {{this.authService.currentUserAsVar().displayName}}!</h1>
+          <h1 align="center">Welcome, {{this.authService.currentUserAsVar().displayName}}!</h1>
 
           </div>
 
-          <div class="col-md-6 col-xxl-5">
-            <nb-card>
-              <nb-card-body>
-                <div class="header">
-                  <div>
+          <div class="col-md-6 col-xxl-5 center">
+                <div class="header center">
+                  <div class="center">
                     <h1>You spent: undefined minutes on undefined!</h1>
                   </div>
                 </div>
-              </nb-card-body>
-            </nb-card>
 
 
               <div class="font-row font-main">
-                <div class="header">
-                  <div class="font-w-bold col-md-6">You spent: </div>
-                  <div class="font-w-bold col-md-6">51 Minutes </div>
-                  <div class="font-w-bold">On</div>
-                  <div class="font-w-bold">Physics!</div>
-              
-                  <div class="variants">
-                    <span class="font-w-bold">Bold</span>
-                    <span class="font-w-regular">Regular</span>
-                    <span class="font-w-light">Light</span>
-                  </div>
-                </div>
-                <p>
-                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated
-                  they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-                </p>
-              </div>
-
-
-
-
+            </div>
             </div>
 
 

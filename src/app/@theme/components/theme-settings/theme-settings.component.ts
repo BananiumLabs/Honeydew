@@ -2,11 +2,15 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { StateService } from '../../../@core/data/state.service';
 
+import { AuthService } from '../../../shared/auth.service';
+
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 @Component({
   selector: 'ngx-theme-settings',
   styleUrls: ['./theme-settings.component.scss'],
   template: `
-    <h6>LAYOUTS</h6>
+    <!--<h6>LAYOUTS</h6>
     <div class="settings-row">
       <a *ngFor="let layout of layouts"
          href="#"
@@ -25,6 +29,20 @@ import { StateService } from '../../../@core/data/state.service';
          (click)="sidebarSelect(sidebar)">
         <i [attr.class]="sidebar.icon"></i>
       </a>
+    </div>-->
+
+    <h6>Log In</h6>
+    <div class="settings-row">
+      <button type="button" class="btn btn-success btn-icon" (click)="login()">
+              <i class="fa fa fa-sign-in"></i>
+      </button>
+    </div>
+
+    <h6>Log Off</h6>
+    <div class="settings-row">
+      <button type="button" class="btn btn-danger btn-icon" (click)="logout()">
+              <i class="fa fa fa-sign-out"></i>
+      </button>
     </div>
   `,
 })
@@ -33,12 +51,20 @@ export class ThemeSettingsComponent {
   layouts = [];
   sidebars = [];
 
-  constructor(protected stateService: StateService) {
+  constructor(protected stateService: StateService, private authService: AuthService, private router: Router) {
     this.stateService.getLayoutStates()
       .subscribe((layouts: any[]) => this.layouts = layouts);
 
     this.stateService.getSidebarStates()
       .subscribe((sidebars: any[]) => this.sidebars = sidebars);
+  }
+
+  login() {
+    this.router.navigate(['/auth/login']);
+  }
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 
   layoutSelect(layout: any): boolean {
