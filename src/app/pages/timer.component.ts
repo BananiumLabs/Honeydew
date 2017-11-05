@@ -1,22 +1,22 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
-import { AuthService } from '../../shared/auth.service';
-import { UserInfo } from '../../shared/user-info';
+import { AuthService } from '../shared/auth.service';
+import { UserInfo } from '../shared/user-info';
 import { Observable, BehaviorSubject } from 'rxjs';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'ngx-dashboard',
-  styleUrls: ['./dashboard.component.scss'],
-  templateUrl: './dashboard.component.html',
+  selector: 'ngx-timer',
+//   styleUrls: ['./timer.component.scss'],
+  templateUrl: './timer.component.html',
 })
-export class DashboardComponent implements AfterViewInit, OnDestroy {
+export class TimerComponent implements AfterViewInit, OnDestroy {
   userInfo: Observable<UserInfo>;
   isLoggedIn = new BehaviorSubject(false);
   name: string;
 
 
   constructor(private authService: AuthService, private router: Router) {
-    console.log("Displaying Dashboard");
+    console.log("Displaying timer");
     this.userInfo = authService.userInfo;
     this.userInfo
       .map(userInfo => !userInfo.isAnonymous)
