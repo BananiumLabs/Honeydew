@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import { AuthService } from '../../shared/auth.service';
 
 let counter = 0;
 
@@ -18,12 +19,12 @@ export class UserService {
 
   private userArray: any[];
 
-  constructor() {
+  constructor(private authService: AuthService) {
     // this.userArray = Object.values(this.users);
   }
 
   getUsers(): Observable<any> {
-    return Observable.of(this.users);
+    return this.authService.currentUser();
   }
 
   getUserArray(): Observable<any[]> {
