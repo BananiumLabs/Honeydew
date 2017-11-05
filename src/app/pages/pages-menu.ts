@@ -8,6 +8,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Schedule',
+    icon: 'nb-list',
+    link: '/pages/schedule',
+    home: true,
+  },
+  {
+    title: 'Reports',
+    icon: 'ion-clipboard',
+    link: '/pages/reports',
+    home: true,
+  },
+  {
     title: 'FEATURES',
     group: true,
   },

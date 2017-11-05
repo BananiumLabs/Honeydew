@@ -15,6 +15,7 @@ import { WelcomeComponent } from './welcome.component';
 
         RouterModule.forChild([
             { path: '', component: WelcomeComponent},
+            // { path: '1', component: OneComponent}, 
         ]),
     ],
     exports: [

@@ -3,14 +3,31 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TimerComponent } from './timer.component';
+import { ReportsComponent } from './reports.component';
+import { ScheduleComponent } from './schedule.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
-  children: [{
+  children: [
+    {
     path: 'dashboard',
-    component: DashboardComponent,
-  }, {
+    component: DashboardComponent, 
+   }, 
+  {
+    path: 'schedule', 
+    component: ScheduleComponent,
+  },
+  {
+    path: 'reports',
+    component: ReportsComponent,
+  },
+  {
+    path: 'timer',
+    component: TimerComponent,
+  },
+  {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {
@@ -44,6 +61,11 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  declarations: [
+    TimerComponent,
+    ScheduleComponent,
+    ReportsComponent
+  ]
 })
 export class PagesRoutingModule {
 }
