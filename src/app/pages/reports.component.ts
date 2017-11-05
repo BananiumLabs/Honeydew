@@ -7,7 +7,7 @@ import { EchartsRadarComponent } from './charts/echarts/echarts-radar.component'
 
 @Component({
   selector: 'ngx-reports',
-//   styleUrls: ['./reports.component.scss'],
+  styleUrls: ['./dashboard/dashboard.component.scss'],
   templateUrl: './reports.component.html',
 })
 export class ReportsComponent implements AfterViewInit, OnDestroy {

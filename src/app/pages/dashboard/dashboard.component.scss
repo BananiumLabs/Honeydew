@@ -9,6 +9,7 @@
   text-align: center;
 }
 @include nb-install-component() {
+   ngx-echarts-pie,
   ngx-echarts-radar {
     display: block;
     height: nb-theme(card-height-medium);
