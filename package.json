@@ -1,13 +1,13 @@
 {
-  "name": "ngx-admin",
-  "version": "2.0.1",
+  "name": "HoneyDew",
+  "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akveo/ngx-admin.git"
+    "url": "git+https://github.com/BananiumLabs/honeydue.git"
   },
   "bugs": {
-    "url": "https://github.com/akveo/ngx-admin/issues"
+    "url": "https://github.com/BananiumLabs/Honeydue/issues"
   },
   "scripts": {
     "ng": "ng",
@@ -49,6 +49,7 @@
     "@swimlane/ngx-charts": "5.2.0",
     "angular2-chartjs": "^0.3.0",
     "angular2-toaster": "4.0.0",
+    "angularfire2": "^4.0.0-rc.2",
     "bootstrap": "4.0.0-beta.2",
     "chart.js": "2.5.0",
     "ckeditor": "4.6.2",

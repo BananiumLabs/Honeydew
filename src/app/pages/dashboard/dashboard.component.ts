@@ -30,7 +30,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-   
+    this.checkLogin();
   }
   showStaticModal() {
     const activeModal = this.modalService.open(ModalComponent, {
@@ -47,10 +47,9 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   }
   
   checkLogin(): boolean {
-    //this.authService.addPT();
-    if (this.authService.isLoggedInBool() === undefined || this.authService.isLoggedInBool() === null) {
+    if (this.authService.isLoggedInBool() == false) {
       console.log("Skipping Info Page Display");
-      window.location.href = '/#/pages/welcome';
+      this.router.navigate(['pages/welcome']);
       return false;
     }
 

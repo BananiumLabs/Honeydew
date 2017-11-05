@@ -66,10 +66,9 @@ export class TimerComponent implements OnInit, OnDestroy {
   }
   
   checkLogin(): boolean {
-    //this.authService.addPT();
-    if (this.authService.isLoggedInBool() === undefined || this.authService.isLoggedInBool() === null) {
-      console.log("Skipping Info Page Display");
-      // this.router.navigate(['../welcome/'])
+    if (this.authService.isLoggedInBool() == false) {
+      console.log("Skipping Display");
+      this.router.navigate(['pages/welcome']);
       return false;
     }
 

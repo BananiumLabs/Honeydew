@@ -218,7 +218,7 @@ export class AuthService {
 
   currentUserAsVar() : any {
     var result = this.angularFireAuth.auth.currentUser;
-    return (result) ? result : 'Undefined';
+    return (result) ? result : 'undefined';
   }
 
 

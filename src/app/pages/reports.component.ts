@@ -34,10 +34,9 @@ export class ReportsComponent implements AfterViewInit, OnDestroy {
   }
   
   checkLogin(): boolean {
-    //this.authService.addPT();
-    if (this.authService.isLoggedInBool() === undefined || this.authService.isLoggedInBool() === null) {
+    if (this.authService.isLoggedInBool() == false) {
       console.log("Skipping Info Page Display");
-      // this.router.navigate(['../welcome/'])
+      this.router.navigate(['pages/welcome']);
       return false;
     }
 
