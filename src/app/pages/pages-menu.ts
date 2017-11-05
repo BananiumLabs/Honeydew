@@ -20,6 +20,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Timer',
+    icon: 'fa fa fa-clock-o',
+    link: '/pages/timer',
+    home: true,
+  },
+  {
     title: 'FEATURES',
     group: true,
   },

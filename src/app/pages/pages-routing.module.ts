@@ -9,6 +9,7 @@ import { ScheduleComponent } from './schedule.component';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { EchartsRadarComponent } from './charts/echarts/echarts-radar.component';
+import { EchartsPieComponent } from './charts/echarts/echarts-pie.component';
 import { AngularEchartsModule } from 'ngx-echarts';
 
 const routes: Routes = [{
@@ -71,7 +72,8 @@ const routes: Routes = [{
     TimerComponent,
     ScheduleComponent,
     ReportsComponent,
-    EchartsRadarComponent
+    EchartsRadarComponent,
+    EchartsPieComponent
   ]
 })
 export class PagesRoutingModule {

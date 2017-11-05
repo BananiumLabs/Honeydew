@@ -22,7 +22,7 @@ export class EchartsPieComponent implements AfterViewInit, OnDestroy {
 
       this.options = {
         backgroundColor: echarts.bg,
-        color: [colors.warningLight, colors.infoLight, colors.dangerLight, colors.successLight, colors.primaryLight],
+        color: [colors.warningLight, colors.infoLight, colors.dangerLight, colors.successLight, colors.primaryLight, colors.success],
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)',
@@ -30,23 +30,24 @@ export class EchartsPieComponent implements AfterViewInit, OnDestroy {
         legend: {
           orient: 'vertical',
           left: 'left',
-          data: ['USA', 'Germany', 'France', 'Canada', 'Russia'],
+          data: ['Calculus', 'History', 'Spanish', 'Literature', 'Physics', 'Music'],
           textStyle: {
             color: echarts.textColor,
           },
         },
         series: [
           {
-            name: 'Countries',
+            name: 'Classes',
             type: 'pie',
             radius: '80%',
             center: ['50%', '50%'],
             data: [
-              { value: 335, name: 'Germany' },
-              { value: 310, name: 'France' },
-              { value: 234, name: 'Canada' },
-              { value: 135, name: 'Russia' },
-              { value: 1548, name: 'USA' },
+              { name: 'Calculus', value: 65 },
+              { name: 'History', value: 16 },
+              { name: 'Spanish', value: 30 },
+              { name: 'Literature', value: 38 },
+              { name: 'Physics', value: 52 },
+              { name: 'Music', value: 25 },
             ],
             itemStyle: {
               emphasis: {
