@@ -1,8 +1,10 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { AuthService } from '../../shared/auth.service';
 import { UserInfo } from '../../shared/user-info';
+import { ModalComponent } from '../ui-features/modals/modal/modal.component';
 import { Observable, BehaviorSubject } from 'rxjs';
 import {Router} from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'ngx-dashboard',
@@ -15,7 +17,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   name: string;
 
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private modalService: NgbModal) {
     console.log("Displaying Dashboard");
     this.userInfo = authService.userInfo;
     this.userInfo
@@ -27,6 +29,17 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
    
+  }
+  showStaticModal() {
+    const activeModal = this.modalService.open(ModalComponent, {
+      size: 'sm',
+      backdrop: 'static',
+      container: 'nb-layout',
+    });
+
+    activeModal.componentInstance.modalHeader = 'Static modal';
+    activeModal.componentInstance.modalContent = `This is static modal, backdrop click
+                                                    will not close it. Click × or confirmation button to close modal.`;
   }
 
   ngOnDestroy(): void {

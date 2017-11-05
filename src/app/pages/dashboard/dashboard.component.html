@@ -1,5 +1,5 @@
 <ul *ngIf="currentUser() | async as user">
-          <div style="text-align:center" class="row"> 
+          <div style="text-align:center" class="row center"> 
 
           <h1 align="center">Welcome, {{this.authService.currentUserAsVar().displayName}}!</h1>
 
@@ -9,14 +9,34 @@
                 <div class="header center">
                   <div class="center">
 
+
+                    <!--<div class="col-lg-6">
+                      <nb-card>
+                        <nb-card-header>Time Spent On Subjects</nb-card-header>
+                        <nb-card-body>
+                          <ngx-echarts-radar></ngx-echarts-radar>
+                        </nb-card-body>
+                      </nb-card>
+                    </div>-->
+
                     
-                    <h1>You spent: undefined minutes on undefined!</h1>
+                    <h1>You spent: 9 minutes on AP Computer Science!</h1>
                   </div>
                 </div>
 
 
               <div class="font-row font-main">
             </div>
+            </div>
+
+            <div class="row center">
+              <nb-card>
+                <nb-card-header>Your Remaining Assignments:</nb-card-header>
+                <nb-card-body>
+                  <h2>AP BIO</h2>
+                  <h2>Calculus FG</h2>
+                </nb-card-body>
+                </nb-card>
             </div>
 
 
@@ -39,34 +59,34 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-sm-3">Radios</label>
+                      <label class="col-sm-3">Priority</label>
                       <div class="col-sm-9">
                         <div class="form-check">
                           <label class="custom-control custom-radio">
                             <input type="radio" class="custom-control-input" name="gridRadios" checked>
                             <span class="custom-control-indicator"></span>
-                            <span class="custom-control-description">Option one is this and that&mdash;be sure to include why it's great</span>
+                            <span class="custom-control-description">Low - I can do this last</span>
                           </label>
                         </div>
                         <div class="form-check">
                           <label class="custom-control custom-radio">
                             <input type="radio" class="custom-control-input" name="gridRadios">
                             <span class="custom-control-indicator"></span>
-                            <span class="custom-control-description">Option two can be something else and selecting it will deselect option one</span>
+                            <span class="custom-control-description">Regular - Place this where space is available</span>
                           </label>
                         </div>
-                        <div class="form-check disabled">
+                        <div class="form-check">
                           <label class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="gridRadios" disabled>
+                            <input type="radio" class="custom-control-input" name="gridRadios">
                             <span class="custom-control-indicator"></span>
-                            <span class="custom-control-description">Option three is disabled</span>
+                            <span class="custom-control-description">High - Place this before any other classes</span>
                           </label>
                         </div>
                       </div>
                     </div>
                     <div class="form-group row">
                       <div class="offset-sm-3 col-sm-9">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary" (click)='showStaticModal()'>Submit</button>
                       </div>
                     </div>
                   </form>
