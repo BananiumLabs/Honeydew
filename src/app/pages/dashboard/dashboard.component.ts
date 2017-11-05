@@ -15,6 +15,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   userInfo: Observable<UserInfo>;
   isLoggedIn = new BehaviorSubject(false);
   name: string;
+  currTime: any;
 
 
   constructor(private authService: AuthService, private router: Router, private modalService: NgbModal) {
@@ -25,6 +26,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
       .subscribe(this.isLoggedIn);
     this.checkLogin();
     // this.name = this.authService.currentUserAsVar().displayName;
+    this.currTime = Observable.interval(1000).map(x => new Date()).share();
   }
 
   ngAfterViewInit() {
@@ -48,7 +50,7 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
     //this.authService.addPT();
     if (this.authService.isLoggedInBool() === undefined || this.authService.isLoggedInBool() === null) {
       console.log("Skipping Info Page Display");
-      // this.router.navigate(['../welcome/'])
+      window.location.href = '/#/pages/welcome';
       return false;
     }
 
@@ -56,6 +58,10 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
     console.log(this.authService.currentUserAsVar());
     console.log(this.authService.currentUser());
     return !this.authService.isLoggedInBool();
+  }
+
+  goToSchedule() {
+    window.location.href = '/#/pages/schedule';
   }
 
   currentUser(): Observable<UserInfo> {
