@@ -29,8 +29,8 @@ import 'rxjs/add/operator/delay';
                    responsive
                    [right]="sidebar.id === 'right'">
         <nb-sidebar-header>
-          <a href="#" class="btn btn-hero-success main-btn">
-            <i class="ion ion-social-github"></i> <span>Support Us</span>
+          <a href="https://github.com/BananiumLabs/Honeydue/" class="btn btn-hero-success main-btn">
+            <i class="ion ion-social-github"></i> <span>Open Source!</span>
           </a>
         </nb-sidebar-header>
         <ng-content select="nb-menu"></ng-content>
