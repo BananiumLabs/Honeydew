@@ -9,6 +9,16 @@
   text-align: center;
 }
 @include nb-install-component() {
+  ngx-echarts-radar {
+    display: block;
+    height: nb-theme(card-height-medium);
+    width: 100%;
+  }
+
+  /deep/ .echart {
+    height: 100%;
+    width: 100%;
+  }
   .show-grid {
     .row {
       margin: -0.5rem;
