@@ -63,6 +63,14 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.disableTimer = 1;
   }
   ngOnDestroy(): void {
+    console.log("Disposing Subscription");
+    this.demoFinished = true;
+    try {
+      this.timerSubscription.unsubscribe();
+    }
+    catch (Error) {
+      console.log("Info: timerSubscription already unsubscibed");
+    }
   }
   
   checkLogin(): boolean {

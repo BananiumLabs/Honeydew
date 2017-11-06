@@ -27,7 +27,7 @@ export class ReportsComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-   
+    this.checkLogin();
   }
 
   ngOnDestroy(): void {

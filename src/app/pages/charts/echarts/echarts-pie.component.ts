@@ -77,6 +77,11 @@ export class EchartsPieComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.themeSubscription.unsubscribe();
+    try {
+      this.themeSubscription.unsubscribe();
+    }
+    catch (Error) {
+      console.warn("WARN: echarts-pie FAILED to unsubscribe");
+    }
   }
 }

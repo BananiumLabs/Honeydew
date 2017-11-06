@@ -71,6 +71,11 @@ export class EchartsRadarComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.themeSubscription.unsubscribe();
+    try {
+      this.themeSubscription.unsubscribe();
+    }
+    catch (Error) {
+      console.warn("WARN: echarts-radar FAILED to unsubscribe");
+    }
   }
 }
