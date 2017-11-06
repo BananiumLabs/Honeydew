@@ -1,0 +1,21 @@
+<div class="header-container"
+     [class.left]="position === 'normal'"
+     [class.right]="position === 'inverse'">
+  <div class="logo-containter">
+    <a (click)="toggleSidebar()" href="#" class="navigation"><i class="nb-menu"></i></a>
+    <img src="https://cdn.discordapp.com/attachments/373959726704361483/376731101659660288/LogoV6.png" style="height:3rem; width:3rem;">
+    <div class="logo" (click)="goToHome()">HoneyDue<span></span></div>
+  </div>
+</div>
+
+<nb-actions
+  size="medium"
+  class="header-container"
+  [class.right]="position === 'normal'"
+  [class.left]="position === 'inverse'">
+  <nb-action icon="nb-grid-b" class="toggle-layout" (click)="toggleSettings()"></nb-action>
+  <nb-action>
+    <nb-user [name]="this.authService.currentUserAsVar().displayName" [picture]="this.authService.currentUserAsVar().photoURL"></nb-user>
+  </nb-action>
+  <nb-action class="control-item" disabled icon="nb-notifications"></nb-action>
+</nb-actions>

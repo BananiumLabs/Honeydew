@@ -1,0 +1,47 @@
+<style>
+    .center {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .divider {
+        width: 0px;
+        height: 50px;
+        display: inline-block;
+
+    }
+</style>
+
+<div class="row show-grid">
+    <h1 class="name bold header col-12">What are your classes?</h1>
+    
+    <h3 class="header name col-12">Enter your classes below, and how long it takes for you to complete daily homework for that class.</h3>
+    
+    <label for="num" class="flow-text">How many classes?</label>
+    <input (keyup)="onKey($event)" required type="number" class="form-control" id="num" name="num">
+
+    
+
+   
+
+    <div *ngFor="let i of getNums()">
+        <div class="row">
+
+            <div class="col-12 center" style="padding-bottom:10rem">
+                
+                    <label for="c{{i}}" class="flow-text">Class {{i+1}} Name</label>
+                    <input (keyup)="onKey($event)" required type="text" class="form-control" id="c{{i}}" name="c{{i}}">
+
+                    <label for="c{{i}}" class="flow-text">Class {{i+1}} Name</label>
+                    <input (keyup)="onKey($event)" required type="text" class="form-control" id="c{{i}}" name="c{{i}}">
+            
+            </div>
+        </div>
+        
+    </div>
+
+    <button class="btn btn-hero-primary btn-demo" (click)="next()">Begin!</button>
+</div>
