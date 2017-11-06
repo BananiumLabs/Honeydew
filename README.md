@@ -1,13 +1,16 @@
 # Honeydew Homework Helper
 
-##### Created for Firebird Hacks 2017.
+### https://honeydue.tech
 
-Responsive cross-platform mobile app which intelligently generates schedules to help you stay focused on your homework!
+#### Created for Firebird Hacks 2017. Winner - Best .tech Website!
 
-Written using NativeScript & Angular2.
+Responsive cross-platform app which intelligently generates schedules to help you stay focused on your homework!
 
-[Click here](https://docs.nativescript.org/angular/start/quick-setup) for the NativeScript installation guide.
+Written using Angular2 + Nebular.
 
-After getting NativeScript setup, run a quick `npm install` to get up and running!
+### Team
 
-If you have a phone handy, you can use `tns run android`. If you don't, just add a `--emulator` tag at the end to use the emulator included with Android SDK.
+ - [Ben Cuan](https://github.com/dbqeo)
+ - [Omar Hossain](https://github.com/epicrider)
+ - [Eric Qian](https://github.com/enumc)
+ - [Viraj Shitole](https://github.com/vrjmath)
